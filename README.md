@@ -15,7 +15,7 @@ using Hibernate(SQLite)
 _______________________________________________
 ###### To run application:
 * Config facets
-* Deploy **.war** on Tomcat etc.
+* Deploy **.war** on Tomcat etc
 _______________________________________________
 ###### To do:
 - [ ] Replace specific implementations with interfaces
