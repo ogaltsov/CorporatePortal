@@ -12,7 +12,6 @@ import web.model.SearchQuery;
 
 
 @Controller
-@RequestMapping("/search")
 public class EmployeeSearchController {
     @Autowired
     private EmployeeDao dao;
@@ -45,7 +44,7 @@ public class EmployeeSearchController {
 //        return (Employee) dao.searchEmployee(searchQuery).get(0);
 //    }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView mainPage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("searchPage");

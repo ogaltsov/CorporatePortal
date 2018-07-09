@@ -1,56 +1,14 @@
-/*-----------------------------------------------------------------------------------
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	display: none;
+}
 
-	Template Name: Haze
-	Template URI: http://www.deliciousthemes.com
-	Description: Portfolio / Photography Template
-	Author: Madalin Tudose
-	Author URI: http://www.deliciousthemes.com
-	License: GNU General Public License version 3.0
-	License URI: http://www.gnu.org/licenses/gpl-3.0.html
-	Version: 1.0
-	
-	All files, unless otherwise stated, are released under the GNU General Public License
-	version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
-
------------------------------------------------------------------------------------
-
-	1. CSS Reset & Clearfix
-	2. Document Setup (body, common classes, etc)
-	3. Columns
-	4. Typography
-		4.1. Dropcaps
-		4.2. Highlighted Text
-	5. Header
-	6. Main Content
-		6.1. Nivo Slider
-		6.2. Jcarousel
-		6.3. Sidebar	
-		6.4. Portfolio
-		6.5. Gallery
-		6.6. Blog
-			6.6.1. Comments
-			6.6.2. Pagination		
-		6.7. Contact
-	7. Footer
-		7.1. Twitter
-		7.2. Flickr
-		7.3. Social Icons
-	8. Elements
-		8.1. Slides Plugin - for Portfolio Single Page
-		8.2. Buttons
-		8.3. Tabs
-		8.4. Toggles
-		8.5. Accordions
-		8.6. Tables
-		8.7. Info Boxes
-		8.8. Lists
-
------------------------------------------------------------------------------------*/
-
-
-/*-----------------------------------------------------------------------------------*/
-/*	1.	CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
-/*-----------------------------------------------------------------------------------*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -693,7 +651,6 @@ h2.bgtitle {
 	top: 0px;
 	left: 50%;
 	margin-left: -960px;
-	background:#000 url(images/nivo-preloader.gif) no-repeat 50% 50%;
 }
 
 .nivoSlider {
@@ -760,7 +717,6 @@ h2.bgtitle {
 	display:block;
 	width:57px;
 	height:57px;
-	background:url(images/arrows.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	position:absolute;
@@ -826,7 +782,6 @@ a.nivo-prevNav {
 }
 
 .caption-bg {
-	background: url(images/caption-bg.png) no-repeat scroll bottom center;
 	width:375px;
 	height:14px;
 	position:absolute;
@@ -925,7 +880,6 @@ a.nivo-prevNav {
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background: transparent url(images/next-horizontal.png) no-repeat 0 0;
 }
 
 .jcarousel-next-horizontal:hover,
@@ -952,7 +906,6 @@ a.nivo-prevNav {
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background: transparent url(images/prev-horizontal.png) no-repeat 0 0;
 }
 
 .jcarousel-prev-horizontal:hover, 
@@ -992,7 +945,6 @@ a.lightbox {
 	right:25px;
 	width:25px;
 	height:25px;
-	background:url(images/lightbox.png) no-repeat scroll 0 0;
 	text-indent:-9999px;
 }
 
@@ -1002,7 +954,6 @@ a.more {
 	right:0px;
 	width:25px;
 	height:25px;
-	background:url(images/link.png) no-repeat scroll 0 0;
 	text-indent:-9999px;
 }
 
@@ -1021,7 +972,6 @@ a.more {
 
 .widget ul li {
 	font-size:12px;
-	background:url(images/breadcrumb-arrow.png) no-repeat scroll 0 6px;
 	padding:5px 0 5px 30px;
 	border-top:1px dashed #efefef;
 }
@@ -1188,7 +1138,6 @@ a.selected {
 }
 
 .rollover {
-	background:url(images/lightbox.png) no-repeat scroll 0 0;
 	width:25px;
 	height:25px;
 	position:absolute;
@@ -1491,7 +1440,6 @@ span.pages {
 }
 
 .totop {
-	background:url(images/top.png) no-repeat scroll 0 0;
 	width:37px;
 	height:42px;
 	position:absolute;
@@ -1593,37 +1541,6 @@ ul#social li a {
 	filter: alpha(opacity=50);
 }
 
-a.forrst {
-	background:url(images/social/forrst.png) no-repeat scroll 0 0;
-}
-a.dribbble {
-	background:url(images/social/dribbble.png) no-repeat scroll 0 0;
-}
-a.vimeo {
-	background:url(images/social/vimeo.png) no-repeat scroll 0 0;
-}
-a.linkedin {
-	background:url(images/social/linkedin.png) no-repeat scroll 0 0;
-}
-a.google {
-	background:url(images/social/google.png) no-repeat scroll 0 0;
-}
-a.skype {
-	background:url(images/social/skype.png) no-repeat scroll 0 0;
-}
-a.facebook {
-	background:url(images/social/facebook.png) no-repeat scroll 0 0;
-}
-a.twitter {
-	background:url(images/social/twitter.png) no-repeat scroll 0 0;
-}
-a.flickr {
-	background:url(images/social/flickr.png) no-repeat scroll 0 0;
-}
-a.rss {
-	background:url(images/social/rss.png) no-repeat scroll 0 0;
-}
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	8.	Elements
@@ -1711,7 +1628,6 @@ a.rss {
 	width:13px;
 	height:0;
 	padding-top:12px;
-	background-image:url(images/pagination.png);
 	background-position:0 0;
 	float:left;
 	overflow:hidden;
@@ -1761,61 +1677,27 @@ a.rss {
 	background-position: 0 -30px; 
 }
 
-.white {
-    background:url(images/buttons/button-small-white.png) repeat-x scroll 0 0;
-    border: 1px solid #d3d3d3;
-    color: #717171;
-}
-
 .white:hover {
     color: #717171;
-}
-
-.yellow {
-    background:url(images/buttons/button-small-yellow.png) repeat-x scroll 0 0;
-    border: 1px solid #daad4b;
-    color: #896d31;
 }
 
 .yellow:hover {
     color: #896d31;
 }
 
-.black {
-    background:url(images/buttons/button-small-black.png) repeat-x scroll 0 0;
-    border: 1px solid #464646;
-    color: #ffffff;
-}
-
 .black:hover {
     color: #ffffff;
-}
-
-.green {
-    background:url(images/buttons/button-small-green.png) repeat-x scroll 0 0;
-    border: 1px solid #4f9937;
-    color: #fff;
 }
 
 .green:hover {
     color: #fff;
 }
 
-.bleumarin {
-    background:url(images/buttons/button-small-bluemarin.png) repeat-x scroll 0 0;
-    border: 1px solid #4bb6da;
-    color: #3c7389;
-}
 
 .bleumarin:hover {
     color: #3c7389;
 }
 
-.rose {
-    background:url(images/buttons/button-small-rose.png) repeat-x scroll 0 0;
-    border: 1px solid #dc5653;
-    color: #8e3d3b;
-}
 
 .rose:hover {
     color: #8e3d3b;
@@ -1938,18 +1820,6 @@ ul.tabs li.active, ul.tabs li.active a:hover  {
 	right:10px; top:12px;
 }
 
-.toggle-plus {
-	background:url(images/plus.png) no-repeat scroll right center;
-	width:12px;
-	height:12px;
-	opacity:0.5;
-}
-
-.toggle-minus {
-	background:url(images/minus.png) no-repeat scroll right center;
-	width:12px;
-	height:12px;
-}
  
 #toggle-view .panel {
 	display:none;
@@ -2083,22 +1953,6 @@ ul.tabs li.active, ul.tabs li.active a:hover  {
 
 
 /*--- 8.8. Lists ---*/
-
-ul.star-list li { 
-	background:url(images/list-star-small.png) no-repeat scroll center left; 
-}
-
-ul.radio-list li { 
-	background:url(images/list-ui-radio-button.png) no-repeat scroll center left; 
-}
-
-ul.arrow-list li { 
-	background:url(images/list-arrow-small.png) no-repeat scroll center left; 
-}
-
-ul.tick-list li { 
-	background:url(images/list-okay.png) no-repeat scroll center left; 
-}
 
 ul.customlist li {
 	padding-left: 20px;

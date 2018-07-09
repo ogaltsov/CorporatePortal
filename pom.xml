@@ -7,8 +7,13 @@
     <groupId>ogaltsow</groupId>
     <artifactId>HibernateStudy</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <packaging>war</packaging>
+
+
+    <properties>
+        <catalog>/corpsite.com</catalog>
+    </properties>
+
 
     <build>
         <plugins>

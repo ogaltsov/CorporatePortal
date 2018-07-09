@@ -1,13 +1,14 @@
 var myList = [{}];
 var arr = [{}];
-var url = "http://localhost:8080/corpsite.com/search/check";
+var url;
 
-function ajaxRequest(selector) {
-
-    var firstName = $("#firstName").val();
-    var secondName = $("#secondName").val();
-    var position = $("#position").val();
-    var department = $("#department").val();
+function ajaxRequest(selector, siteUrl ) {
+    console.log(siteUrl);
+    url = siteUrl;
+    var firstName = encodeURIComponent($("#firstName").val());
+    var secondName = encodeURIComponent($("#secondName").val());
+    var position = encodeURIComponent($("#position").val());
+    var department = encodeURIComponent($("#department").val());
 
     var arrOfInput =  [firstName,secondName,position, department];
 
@@ -15,8 +16,11 @@ function ajaxRequest(selector) {
     TBody.innerHTML = "";
 
     $(document).ready(function() {
+        document.getElementById('errorNullForm').style.display ='none';
+        document.getElementById('errorNoMatches').style.display ='none';
+        ///////
+        console.log(url);
         if(isArrEmpty(arrOfInput).length>0) {
-            document.getElementById('msgInput').style.display ='none';
             $.ajax({
                 url: url + "?" + "firstName=" + firstName + "&secondName=" + secondName + "&position=" + position + "&department=" + department
             }).then(function (data) {
@@ -32,11 +36,16 @@ function ajaxRequest(selector) {
                 console.log(myList);
                 myList = arr;
                 console.log(myList);
-                buildHtmlTable(selector)
+                if(arr.length==0){
+                    document.getElementById('errorNoMatches').style.display ='block';
+                }
+                else {
+                    buildHtmlTable(selector)
+                }
             });
         }
         else {
-            document.getElementById('msgInput').style.display ='block';
+            document.getElementById('errorNullForm').style.display ='block';
         }
     });
     return false;
@@ -45,8 +54,6 @@ function ajaxRequest(selector) {
 
 // Builds the HTML Table out of myList.
 function buildHtmlTable(selector) {
-
-
 
     var columns = addAllColumnHeaders(myList, selector);
 
