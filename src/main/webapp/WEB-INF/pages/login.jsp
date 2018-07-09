@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<spring:eval expression="@propertyConfigurer.getProperty('application.properties')" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,7 @@
 
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="<c:url value="/resources/js/custom.js"/>"></script>
+
 
 </head>
 
@@ -20,24 +22,22 @@
 <div id="wrapper">
     <div id="top">
         <header id="header">
-            <div class="one-fourth">
-                        <div class="logo"><a href="/corpsite.com/"><img src="/resources/images/logo.png" alt="" /></a></div>
-            </div><!--end one-fourth-->
-
             <div class="three-fourth column-last">
                 <nav id="navigation">
                     <ul id="mainnav">
-                        <li><a href="/corpsite.com/">MAIN</a></li>
-                        <li><a href="/corpsite.com/">NEWS</a></li>
-                        <li><a href="/corpsite.com/search/">EMPLOYEES</a></li>
-                        <li><a href="/corpsite.com/">REQUESTS</a></li>
-                        <li><a href="/corpsite.com/">CONTACTS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >MAIN</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"   >NEWS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"  >EMPLOYEES</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >REQUESTS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/contacts"         >CONTACTS</a></li>
                         <c:if test="${pageContext.request.userPrincipal.name == null}">
-                            <li><a class="current" href="/corpsite.com/user/">LOGIN</a></li>
+                            <li><a class="current" href="
+                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/"         >LOGIN</a></li>
                         </c:if>
 
                         <c:if test="${pageContext.request.userPrincipal.name != null}">
-                            <li><a class="current" href="/corpsite.com/user/">
+                            <li><a class="current" href="
+                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/">
                                     ${pageContext.request.userPrincipal.name}
                             </a></li>
                         </c:if>

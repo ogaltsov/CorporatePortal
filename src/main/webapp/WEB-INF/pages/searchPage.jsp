@@ -21,18 +21,14 @@
 <div class="pageContainer" id="wrapper">
     <div id="top">
         <header id="header">
-            <div class="one-fourth">
-                <div class="logo"><a href="/corpsite.com/"><img src="/resources/images/logo.png" alt="" /></a></div>
-            </div><!--end one-fourth-->
-
             <div class="three-fourth column-last">
                 <nav id="navigation">
                     <ul id="mainnav">
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >MAIN</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/"   >NEWS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"   >NEWS</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search" >EMPLOYEES</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >REQUESTS</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >CONTACTS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/contacts"         >CONTACTS</a></li>
                         <c:if test="${pageContext.request.userPrincipal.name == null}">
                             <li><a class="current" href="
                                 <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/"         >LOGIN</a></li>

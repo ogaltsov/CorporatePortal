@@ -22,6 +22,28 @@ public class NewsDao {
     public News getNewsById(Integer newsId){
         Session session = sessionFactory.openSession();
         News news = session.get(News.class, newsId);
+        session.close();
+        return news;
+    }
+
+//    public Integer getAllNewsCount(){
+//        Session session = sessionFactory.openSession();
+//        Query query = session.createQuery("select count (*) from News");
+//        Integer result = (Integer) query.uniqueResult();
+//        session.close();
+//        return result;
+//    }
+
+    public List<News> getNewsForPage(Integer page){
+        int start = page*5 - 5;
+        int max = 5;
+
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from News", News.class);
+        query.setFirstResult(start);
+        query.setMaxResults(5);
+        List<News> news = query.list();
+        session.close();
         return news;
     }
 }

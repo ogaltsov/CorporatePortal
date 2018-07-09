@@ -1,9 +1,12 @@
-import dao.UserDao;
-
+import dao.NewsDao;
 public class AppMain {
 
     public static void main(String[] args) {
-        UserDao dao = new UserDao();
-        System.out.println(dao.findByUsername("user1"));
+      /*todo: 1) сгрупировать зависимости и убрать лишние
+              2) заменить ссылки в навигации на конструкции properties
+              3) убрать лишние ссылки, контейнеры, стили, js
+       */
+
+
     }
 }

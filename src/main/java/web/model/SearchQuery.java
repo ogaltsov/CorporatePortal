@@ -42,9 +42,6 @@ public class SearchQuery {
                 '}';
     }
 
-    ///////
-
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

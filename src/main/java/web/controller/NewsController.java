@@ -10,6 +10,7 @@ import web.model.News;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/news")
@@ -26,15 +27,8 @@ public class NewsController {
         return list;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView allNewsPage(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("allNewsPage");
-        return modelAndView;
-    }
-
     @RequestMapping(value = "/news", method = RequestMethod.GET)
-    public ModelAndView getNewsPage(@RequestParam(value = "news", required = false) Integer newsId){
+    public ModelAndView getNewsPage(@RequestParam(value = "id", required = false) Integer newsId){
         News news = dao.getNewsById(newsId);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("id", news.getId());
@@ -47,6 +41,31 @@ public class NewsController {
         modelAndView.setViewName("newsPage");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView allNewsPage(@RequestParam(value = "page", required = false) Integer pageNumber){
+        //Integer allPagesNumber = dao.getAllNewsCount();
+        ModelAndView modelAndView = new ModelAndView();
+        List<News> newsList = dao.getNewsForPage(pageNumber);
+
+        for(int i = 0; i<5; i++){
+            News news = newsList.get(i);
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            String attributeElement="<div class=\"team-text\">\n" +
+                    "                        <h1 id=\"newsTitle"+i+"\">"+news.getTitle()+"</h1>\n" +
+                    "                        <span id=\"newsDate\">"+news.getAuthor()+"</span>\n" +
+                    "                        <span id=\"newsAuthor\"> - "+format.format(news.getDate())+"</span>\n" +
+                    "                        <p id=\"newsText0\" style=\"font-size: 10pt\">"+news.getArticle()+"</p>\n" +
+                    "                    </div>";
+            modelAndView.addObject("news"+i, attributeElement);
+        }
+        modelAndView.setViewName("allNewsPage");
+        return modelAndView;
+    }
+
+
+
+
 
 
 }

@@ -11,17 +11,12 @@
 
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" type="text/css" media="screen">
 
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="<c:url value="/resources/js/ajaxRequestNews.js" />"></script>
+
 
 </head>
 
 <body>
-
-<div id="url" style="display: none">
-    <spring:eval expression="@propertyConfigurer.getProperty('domain')"/><spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>
-</div>
 
 <div id="wrapper">
     <div id="top">
@@ -66,57 +61,16 @@
     </div><!--end top-->
 
     <div class="centered-wrapper">
-        <%--==================      NEWS START      ========================================--%>
-        <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
         <div class="three-fourth column-last">
-            <ul id="team">
 
-                <!---->
-                <li class="team-member">
                     <div class="team-text">
-                        <h3 id="newsTitle0"></h3>
-                        <span id="newsDate0"></span>
-                        <p id="newsText0" style="font-size: 10pt"></p>
+                        <h1 id="newsTitle0">${title}</h1>
+                        <span id="newsDate">${date}</span>
+                        <span id="newsAuthor"> - ${author}</span>
+                        <p id="newsText0" style="font-size: 10pt">${article}</p>
                     </div>
-                </li><!--end team-member-->
-                <!---->
 
-                <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle1"></h3>
-                        <span id="newsDate1"></span>
-                        <p id="newsText1" style="font-size: 10pt"></p>
-                    </div>
-                </li><!--end team-member-->
-
-                <li class="team-member">
-                <div class="team-text">
-                    <h3 id="newsTitle2"></h3>
-                    <span id="newsDate2"></span>
-                    <p id="newsText2" style="font-size: 10pt"></p>
-                </div>
-                </li><!--end team-member-->
-
-                <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle3"></h3>
-                        <span id="newsDate3"></span>
-                        <p id="newsText3" style="font-size: 10pt"></p>
-                    </div>
-                </li><!--end team-member-->
-
-                <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle4"></h3>
-                        <span id="newsDate4"></span>
-                        <p id="newsText4" style="font-size: 10pt"></p>
-                    </div>
-                </li><!--end team-member-->
-                <!---->
-
-            </ul>
         </div>
-        <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
     </div><!--end centered-wrapper-->
 
     <div class="centered-wrapper">

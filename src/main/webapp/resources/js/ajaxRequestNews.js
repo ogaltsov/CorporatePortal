@@ -1,8 +1,10 @@
-var url = "http://localhost:8080/corpsite.com/news/getLastNewsList";
+var url;
+var requestUrl;
 $(document).ready(function() {
-
+        url = $('#url').html();
+        requestUrl = url + "/news/getLastNewsList";
         $.ajax({
-            url: url
+            url: requestUrl
         }).then(function (data) {
             buildLatestNewsFlow(data.jsonArray);
             return false;
@@ -12,11 +14,13 @@ $(document).ready(function() {
 function buildLatestNewsFlow(data) {
     var titleId = "#newsTitle";
     var textId = "#newsText";
-    var dateId = "newsDate";
+    var dateId = "#newsDate";
     for(var i = 0; i<data.length; i++) {
         var titleIdMod = titleId;
         titleIdMod += i;
-        $(titleIdMod).append(data[i].title);
+
+        var newsLink = url+"/news/news?id="+data[i].id;
+        $(titleIdMod).append("<a href=\""+ newsLink +"\"><h2>" + data[i].title + "</h2></a>");
 
         var textIdMod = textId;
         textIdMod += i;

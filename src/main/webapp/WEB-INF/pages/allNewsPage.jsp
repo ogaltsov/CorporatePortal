@@ -13,7 +13,6 @@
 
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="<c:url value="/resources/js/ajaxRequestNews.js" />"></script>
 
 </head>
 
@@ -73,44 +72,24 @@
 
                 <!---->
                 <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle0"></h3>
-                        <span id="newsDate0"></span>
-                        <p id="newsText0" style="font-size: 10pt"></p>
-                    </div>
+                    ${news0}
                 </li><!--end team-member-->
                 <!---->
 
                 <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle1"></h3>
-                        <span id="newsDate1"></span>
-                        <p id="newsText1" style="font-size: 10pt"></p>
-                    </div>
+                    ${news1}
                 </li><!--end team-member-->
 
                 <li class="team-member">
-                <div class="team-text">
-                    <h3 id="newsTitle2"></h3>
-                    <span id="newsDate2"></span>
-                    <p id="newsText2" style="font-size: 10pt"></p>
-                </div>
+                    ${news2}
                 </li><!--end team-member-->
 
                 <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle3"></h3>
-                        <span id="newsDate3"></span>
-                        <p id="newsText3" style="font-size: 10pt"></p>
-                    </div>
+                    ${news3}
                 </li><!--end team-member-->
 
                 <li class="team-member">
-                    <div class="team-text">
-                        <h3 id="newsTitle4"></h3>
-                        <span id="newsDate4"></span>
-                        <p id="newsText4" style="font-size: 10pt"></p>
-                    </div>
+                    ${news4}
                 </li><!--end team-member-->
                 <!---->
 
