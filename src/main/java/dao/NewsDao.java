@@ -13,7 +13,7 @@ public class NewsDao {
 
     public List<News> getLatestNews(){
         Session session = sessionFactory.openSession();
-        Query<News> query = session.createQuery("from News order by date", News.class).setMaxResults(5);//max 5 news in latest news in main page
+        Query<News> query = session.createQuery("from News order by date desc ", News.class).setMaxResults(5);//max 5 news in latest news in main page
         List<News> list = query.list();
         session.close();
         return list;
@@ -39,7 +39,7 @@ public class NewsDao {
         int max = 5;
 
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("from News", News.class);
+        Query query = session.createQuery("from News order by date desc", News.class);
         query.setFirstResult(start);
         query.setMaxResults(5);
         List<News> news = query.list();

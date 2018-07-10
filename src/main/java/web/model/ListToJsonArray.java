@@ -5,7 +5,7 @@ import java.util.List;
 public class  ListToJsonArray<T> {
         private List<T> jsonArray;
 
-        public void setJsonArray(List<T> jsonArray) {
+        public void setList(List<T> jsonArray) {
             this.jsonArray = jsonArray;
         }
 

@@ -23,7 +23,7 @@ public class NewsController {
     public @ResponseBody
     ListToJsonArray<News> getLastNewsList(){
         ListToJsonArray<News> list = new ListToJsonArray<>();
-        list.setJsonArray(dao.getLatestNews());
+        list.setList(dao.getLatestNews());
         return list;
     }
 
@@ -46,22 +46,20 @@ public class NewsController {
     public ModelAndView allNewsPage(@RequestParam(value = "page", required = false) Integer pageNumber){
         //Integer allPagesNumber = dao.getAllNewsCount();
         ModelAndView modelAndView = new ModelAndView();
-        List<News> newsList = dao.getNewsForPage(pageNumber);
-
-        for(int i = 0; i<5; i++){
-            News news = newsList.get(i);
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-            String attributeElement="<div class=\"team-text\">\n" +
-                    "                        <h1 id=\"newsTitle"+i+"\">"+news.getTitle()+"</h1>\n" +
-                    "                        <span id=\"newsDate\">"+news.getAuthor()+"</span>\n" +
-                    "                        <span id=\"newsAuthor\"> - "+format.format(news.getDate())+"</span>\n" +
-                    "                        <p id=\"newsText0\" style=\"font-size: 10pt\">"+news.getArticle()+"</p>\n" +
-                    "                    </div>";
-            modelAndView.addObject("news"+i, attributeElement);
-        }
         modelAndView.setViewName("allNewsPage");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/pg", method = RequestMethod.GET)
+    public @ResponseBody
+    ListToJsonArray<News> newsPerPage(@RequestParam(value = "page", required = false) Integer pageNumber){
+        List<News> newsList = dao.getNewsForPage(pageNumber);
+        ListToJsonArray<News> listOfNews = new ListToJsonArray<>();
+        listOfNews.setList(newsList);
+        return listOfNews;
+    }
+
+
 
 
 

@@ -11,8 +11,9 @@
 
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" type="text/css" media="screen">
 
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script src="<c:url value="/resources/js/multiPageNewsFlow.js" />"></script>
 
 </head>
 
@@ -70,41 +71,50 @@
         <div class="three-fourth column-last">
             <ul id="team">
 
-                <!---->
-                <li class="team-member">
-                    ${news0}
-                </li><!--end team-member-->
-                <!---->
+                <%--<!---->--%>
+                <%--<li class="team-member">--%>
+                    <%--${news0}--%>
+                <%--</li><!--end team-member-->--%>
+                <%--<!---->--%>
 
-                <li class="team-member">
-                    ${news1}
-                </li><!--end team-member-->
+                <%--<li class="team-member">--%>
+                    <%--${news1}--%>
+                <%--</li><!--end team-member-->--%>
 
-                <li class="team-member">
-                    ${news2}
-                </li><!--end team-member-->
+                <%--<li class="team-member">--%>
+                    <%--${news2}--%>
+                <%--</li><!--end team-member-->--%>
 
-                <li class="team-member">
-                    ${news3}
-                </li><!--end team-member-->
+                <%--<li class="team-member">--%>
+                    <%--${news3}--%>
+                <%--</li><!--end team-member-->--%>
 
-                <li class="team-member">
-                    ${news4}
-                </li><!--end team-member-->
-                <!---->
+                <%--<li class="team-member">--%>
+                    <%--${news4}--%>
+                <%--</li><!--end team-member-->--%>
+                <%--<!---->--%>
 
             </ul>
+
+            <div id="imgContainer" class="wrap">
+                <a id="aImg0" class="aImg">
+                    <img id="leftPageButton" class="page-button" src="<c:url value="/resources/images/left_button.png"/>"   />
+                </a>
+                <a id="aImg1" class="aImg">
+                    <img id="rightPageButton" class="page-button" src="<c:url value="/resources/images/right_button.png"/>"   />
+                </a>
+            </div>
         </div>
         <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+
+
+
     </div><!--end centered-wrapper-->
 
     <div class="centered-wrapper">
-
         <footer id="footer">
             <div class="double-separator"></div>
         </footer>
-
-
 
     </div><!--end centered-wrapper-->
 </div>

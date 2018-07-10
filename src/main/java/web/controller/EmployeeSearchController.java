@@ -34,7 +34,7 @@ public class EmployeeSearchController {
     public @ResponseBody
     ListToJsonArray<Employee> checkUser(@ModelAttribute("searchQuery") SearchQuery searchQuery) {
         ListToJsonArray<Employee> array = new ListToJsonArray<>();
-        array.setJsonArray(dao.searchEmployee(searchQuery));
+        array.setList(dao.searchEmployee(searchQuery));
         return array;
     }
 

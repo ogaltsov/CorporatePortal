@@ -481,6 +481,23 @@ h2.intro-text a:hover {
 	margin:0 auto;
 }
 
+.wrap{
+	margin: 0 auto;
+}
+
+.page-button {
+	float: left;
+	height:60px;
+	padding-bottom:5px;
+	width:60px;
+	margin:0 auto;
+	text-align: center;
+}
+
+.aImg{
+	display: none;
+}
+
 .page-title {
 	width:940px;
 	margin:0 auto;
