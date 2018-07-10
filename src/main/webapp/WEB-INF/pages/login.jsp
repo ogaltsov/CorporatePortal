@@ -25,19 +25,18 @@
             <div class="three-fourth column-last">
                 <nav id="navigation">
                     <ul id="mainnav">
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >MAIN</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"                >MAIN</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"   >NEWS</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"  >EMPLOYEES</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >REQUESTS</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/contacts"         >CONTACTS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"         >EMPLOYEES</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/contacts"       >CONTACTS</a></li>
                         <c:if test="${pageContext.request.userPrincipal.name == null}">
                             <li><a class="current" href="
-                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/"         >LOGIN</a></li>
+                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/login"                >LOGIN</a></li>
                         </c:if>
 
                         <c:if test="${pageContext.request.userPrincipal.name != null}">
                             <li><a class="current" href="
-                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/">
+                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/id?userName=${pageContext.request.userPrincipal.name}">
                                     ${pageContext.request.userPrincipal.name}
                             </a></li>
                         </c:if>
@@ -50,7 +49,9 @@
             <div class="double-separator"></div>
             <div class="breadcrumbs">
                 <div class="one-half alignleft">
-                    <a href="/corpsite.com/">Home</a>
+                    <a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />">Home</a>
+                    <img src="<c:url value="/resources/images/arrow.png"/>" alt="" />
+                    <a>Login</a>
                 </div>
 
                 <div class="one-half column-last alignright">

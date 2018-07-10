@@ -7,7 +7,7 @@
 	http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/user/" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/search/**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/j_spring_security_check" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')" />
         <!--<intercept-url pattern="/login**" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')" />-->
@@ -15,7 +15,7 @@
         <form-login
                 login-processing-url="/j_spring_security_check"
                 login-page="/login"
-                default-target-url="/user/"
+                default-target-url="/"
                 authentication-failure-url="/login?error"
                 username-parameter="username"
                 password-parameter="password" />

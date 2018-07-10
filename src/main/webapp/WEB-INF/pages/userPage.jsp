@@ -15,6 +15,7 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <c:url value="/logout" var="logoutUrl" />
+    <c:set var="userName" value="${userName}"/>
 </head>
 
 <body>
@@ -24,18 +25,17 @@
             <div class="three-fourth column-last">
                 <nav id="navigation">
                     <ul id="mainnav">
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >MAIN</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"                >MAIN</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"   >NEWS</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search" >EMPLOYEES</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"         >REQUESTS</a></li>
-                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/contacts"         >CONTACTS</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"         >EMPLOYEES</a></li>
+                        <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/contacts"       >CONTACTS</a></li>
                         <c:if test="${pageContext.request.userPrincipal.name == null}">
                             <li><a class="current" href="
-                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/"         >LOGIN</a></li>
+                                <spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/login"                >LOGIN</a></li>
                         </c:if>
 
                         <c:if test="${pageContext.request.userPrincipal.name != null}">
-                            <li><a class="current" href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/">
+                            <li><a class="current" href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>/user/id?userName=${pageContext.request.userPrincipal.name}">
                                     ${pageContext.request.userPrincipal.name}
                             </a></li>
                         </c:if>
@@ -48,9 +48,9 @@
             <div class="double-separator"></div>
             <div class="breadcrumbs">
                 <div class="one-half alignleft">
-                    <a href="index.html">Home</a>
-                    <img src="images/breadcrumb-arrow.png" alt="" />
-                    Our Team
+                    <a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />">Home</a>
+                    <img src="<c:url value="/resources/images/arrow.png"/>" alt="" />
+                    <a>${userName}</a>
                 </div>
 
                 <div class="one-half column-last alignright">
@@ -83,13 +83,12 @@
             <aside>
                 <div class="widget">
                     <ul>
-                        <li><a href="javascript:formSubmit()">
-                                LogOut
-                            </a>
-                        </li>
+                        <c:if test="${pageContext.request.userPrincipal.name == userName}">
+                            <li><a href="javascript:formSubmit()">LogOut</a></li>
                         <%--<li><a href="team.html">Our Team</a></li>--%>
                         <%--<li><a href="pricing.html">Pricing Options</a></li>--%>
                         <%--<li><a href="faqs.html">FAQs</a></li>--%>
+                        </c:if>
                     </ul>
                 </div><!--end widget-->
             </aside><!--end aside-->
@@ -102,7 +101,7 @@
                         <img class="team-avatar" src="<c:url value="/resources/images/member.jpg"/>" alt="${pageContext.request.userPrincipal.name}" />
                     </div>
                     <div class="team-text">
-                        <h2>${pageContext.request.userPrincipal.name}</h2>
+                        <h2>${userName}</h2>
                     </div>
                 </li><!--end team-member-->
 
