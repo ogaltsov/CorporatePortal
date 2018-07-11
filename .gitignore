@@ -51,6 +51,7 @@ logs/
 
 # JetBrains IDEs
 .idea
+.idea/
 *.iml
 
 # Eclipse
