@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" charset="UTF-8"/>
 
     <title>Main Page</title>
 
@@ -84,11 +84,11 @@
                         <tbody>
                         <tr>
                             <td>User:</td>
-                            <td><input class="form-control input-lg" type='text' name='username' value='' style="margin-left: 10px"></td>
+                            <td><input class="form-control input-lg" type='text' name='username' pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" style="margin-left: 10px"></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><input class="form-control input-lg" type='password' name='password' style="margin-left: 10px" /></td>
+                            <td><input class="form-control input-lg" type='password' name='password' pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" style="margin-left: 10px" /></td>
                         </tr>
                         <tr>
                             <td colspan='2'><input  class="btn btn-lg btn-default" name="submit" type="submit"
