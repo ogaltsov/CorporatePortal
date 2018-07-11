@@ -17,6 +17,8 @@ public class AuthController {
 
         ModelAndView model = new ModelAndView();
         if (error != null) {
+            System.out.println("error");/////
+            System.out.println(error);
             model.addObject("error", "Invalid username and password!");
         }
 

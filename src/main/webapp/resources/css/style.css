@@ -411,13 +411,13 @@ blockquote {
 	margin-top:45px;
 }
 
-ul#mainnav {
+ul#menu {
 	float:left;
 	position:relative;
 	display:block;
 }
 
-ul#mainnav li {
+ul#menu li {
 	display:inline;
 	font-family: 'Museo500', Museo500, Helvetica, Arial, sans-serif;
 	font-size:14px;
@@ -426,7 +426,7 @@ ul#mainnav li {
 	position:relative;
 }
 
-ul#mainnav li a {
+ul#menu li a {
 	position:relative;
 	color:#323232;
 	padding:0 15px;
@@ -440,7 +440,7 @@ ul#mainnav li a {
     transition:background 0.2s linear;
 }
 
-ul#mainnav li a:active, ul#mainnav li a:hover , ul#mainnav li a.current{
+ul#menu li a:active, ul#menu li a:hover , ul#menu li a.current{
 	background:#323232;
 	color:#fff;
 	text-decoration:none;

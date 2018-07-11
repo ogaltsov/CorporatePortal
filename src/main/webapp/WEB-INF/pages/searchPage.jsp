@@ -7,7 +7,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <title>Main Page</title>
+    <title>Search</title>
 
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" type="text/css" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,7 +23,7 @@
         <header id="header">
             <div class="three-fourth column-last">
                 <nav id="navigation">
-                    <ul id="mainnav">
+                    <ul id="menu">
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"                >MAIN</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"   >NEWS</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"         >EMPLOYEES</a></li>

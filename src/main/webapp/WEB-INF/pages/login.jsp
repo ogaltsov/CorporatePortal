@@ -24,7 +24,7 @@
         <header id="header">
             <div class="three-fourth column-last">
                 <nav id="navigation">
-                    <ul id="mainnav">
+                    <ul id="menu">
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"                >MAIN</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"   >NEWS</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"         >EMPLOYEES</a></li>
@@ -53,18 +53,12 @@
                     <img src="<c:url value="/resources/images/arrow.png"/>" alt="" />
                     <a>Login</a>
                 </div>
-
-                <div class="one-half column-last alignright">
-
-                </div>
             </div><!--end breadcrumbs-->
             <div class="double-separator"></div>
         </section>
     </div><!--end top-->
 
     <div align="center" class="centered-wrapper">
-
-
         <div align="center" class="column-last">
             <div id="login-box" align="center">
 
@@ -73,6 +67,7 @@
                 <c:if test="${not empty error}">
                     <div class="error">${error}</div>
                 </c:if>
+
                 <c:if test="${not empty msg}">
                     <div class="msg">${msg}</div>
                 </c:if>
@@ -84,12 +79,18 @@
                         <tbody>
                         <tr>
                             <td>User:</td>
-                            <td><input class="form-control input-lg" type='text' name='username' pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" style="margin-left: 10px"></td>
+                            <td><input class="form-control input-lg" type='text'
+                                       name='username' maxlength="10", minlength="3"
+                                       pattern="[a-zA-Z0-9]{3,10}" style="margin-left: 10px"></td>
                         </tr>
+
                         <tr>
                             <td>Password:</td>
-                            <td><input class="form-control input-lg" type='password' name='password' pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" style="margin-left: 10px" /></td>
+                            <td><input class="form-control input-lg" type='password'
+                                       name='password' maxlength="25" minlength="8"
+                                       pattern="[a-zA-Z0-9\@\#\$\%\^\&\*]{8,25}" style="margin-left: 10px" /></td>
                         </tr>
+
                         <tr>
                             <td colspan='2'><input  class="btn btn-lg btn-default" name="submit" type="submit"
                                                    value="LogIn" style="margin-top: 6px"/></td>
@@ -103,7 +104,6 @@
                 </form>
             </div>
         </div>
-
     </div><!--end centered-wrapper-->
 
     <div class="centered-wrapper">

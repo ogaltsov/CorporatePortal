@@ -24,7 +24,7 @@
 
             <div class="three-fourth column-last">
                 <nav id="navigation">
-                    <ul id="mainnav">
+                    <ul id="menu">
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />"            >MAIN</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/news/?page=1"      >NEWS</a></li>
                         <li><a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />/search"     >EMPLOYEES</a></li>
