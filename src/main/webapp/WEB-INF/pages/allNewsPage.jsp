@@ -16,9 +16,7 @@
 </head>
 
 <body>
-    <div id="url" style="display: none">
-        <spring:eval expression="@propertyConfigurer.getProperty('domain')"/><spring:eval expression="@propertyConfigurer.getProperty('catalog')"/>
-    </div>
+    <div id="url" style="display: none"><spring:eval expression="@propertyConfigurer.getProperty('domain')"/><spring:eval expression="@propertyConfigurer.getProperty('catalog')"/></div>
 
     <div id="wrapper">
         <div id="top">

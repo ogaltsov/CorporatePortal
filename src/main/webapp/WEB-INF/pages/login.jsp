@@ -88,7 +88,7 @@
                                     <td>Password:</td>
                                     <td><input class="form-control input-lg" type='password'
                                                name='password' maxlength="25" minlength="8"
-                                               pattern="[a-zA-Z0-9\@\#\$\%\^\&\*]{8,25}" style="margin-left: 10px" /></td>
+                                               pattern="[a-zA-Z0-9@#\$%\^\?&\*]{8,25}" style="margin-left: 10px" /></td>
                                 </tr>
 
                                 <tr>
