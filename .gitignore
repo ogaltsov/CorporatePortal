@@ -50,7 +50,7 @@ logs/
 /.vscode
 
 # JetBrains IDEs
-.idea/
+.idea/*
 *.iml
 
 # Eclipse

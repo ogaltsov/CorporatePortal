@@ -52,23 +52,20 @@
                     <a>Search</a>
                 </div>
 
-                <div class="one-half column-last alignright">
-
-                </div>
+                <div class="one-half column-last alignright"></div>
             </div><!--end breadcrumbs-->
             <div class="double-separator"></div>
         </section>
     </div><!--end top-->
 
     <div align="center" class="centered-wrapper">
-
-
         <div align="center" class="column-last">
             <div id="login-box" align="center">
                 <div class="page" align="center">
                     <h1>Search for company employee</h1>
                     <p class="lead">Enter information about employee and the search returns matches</p>
                     <div align="center" class="form-inline">
+
                         <form class="form" id="form">
                             <input type=text class="form-control input-lg"
                                    id="firstName" placeholder="First name"
@@ -103,14 +100,9 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
-
-
-
             </div>
         </div>
-
     </div><!--end centered-wrapper-->
 
     <div class="centered-wrapper">

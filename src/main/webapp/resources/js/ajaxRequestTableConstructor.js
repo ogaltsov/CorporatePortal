@@ -1,5 +1,5 @@
-var myList = [{}];
-var arr = [{}];
+var myList;
+var arr;
 var url;
 
 function ajaxRequest(selector, siteUrl ) {
@@ -18,24 +18,15 @@ function ajaxRequest(selector, siteUrl ) {
     $(document).ready(function() {
         document.getElementById('errorNullForm').style.display ='none';
         document.getElementById('errorNoMatches').style.display ='none';
-        ///////
-        console.log(url);
+
         if(isArrEmpty(arrOfInput).length>0) {
             $.ajax({
                 url: url + "?" + "firstName=" + firstName + "&secondName=" + secondName + "&position=" + position + "&department=" + department
             }).then(function (data) {
-                //
-                console.log(arrOfInput);
-                console.log(url);
-                console.log(firstName, secondName, position, department);
-                console.log(data);
-                //
-                arr = data.jsonArray;
 
-                console.log(arr);
-                console.log(myList);
+                arr = data.jsonArray;
                 myList = arr;
-                console.log(myList);
+
                 if(arr.length==0){
                     document.getElementById('errorNoMatches').style.display ='block';
                 }
@@ -85,7 +76,6 @@ function addAllColumnHeaders(myList, selector) {
         }
     }
     $(selector).append(headerTr$);
-
     return columnSet;
 }
 

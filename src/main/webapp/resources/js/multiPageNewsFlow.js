@@ -14,7 +14,6 @@ $(document).ready(function () {
         aImg.style.display='block';
     }
     getNewsFlow();
-
 });
 
 function formNewsFlow(data) {

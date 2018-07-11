@@ -78,11 +78,7 @@
             }
         </script>
 
-
-
-
         <div class="centered-wrapper">
-
             <div class="one-fourth">
                 <aside>
                     <div class="widget">
@@ -108,13 +104,8 @@
                             <h2>${userName}</h2>
                         </div>
                     </li><!--end team-member-->
-
-
-
                 </ul>
-
             </div>
-
         </div><!--end centered-wrapper-->
 
         <div class="centered-wrapper">
