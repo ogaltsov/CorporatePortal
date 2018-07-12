@@ -2,9 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import services.HibernateSessionFactory;
 import web.model.User;
 
+@Repository("userDao")
 public class UserDao {
 
     private SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();

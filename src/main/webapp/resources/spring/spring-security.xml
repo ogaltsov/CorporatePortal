@@ -6,6 +6,8 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
+    <beans:import resource="spring-config.xml"/>
+
     <http auto-config="true">
         <intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/search/**" access="hasRole('ROLE_USER')" />
@@ -36,7 +38,7 @@
     </authentication-manager>
 
     <beans:bean id="userDetailsServiceImpl"
-                class="services.UserDetailsServiceImpl"></beans:bean>
+                class="services.UserDetailsServiceImpl" depends-on="userDao"/>
 
     <beans:bean id="encoder"
                 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">

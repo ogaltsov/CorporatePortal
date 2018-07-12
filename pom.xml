@@ -34,7 +34,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/corpsite.com</contextPath>
+                        <contextPath>${catalog}</contextPath>
                     </webApp>
                 </configuration>
             </plugin>
