@@ -28,7 +28,7 @@ _______________________________________________
 - [x] Create messages for wrong search request("null-form", "there are no employee")
 - [ ] mainPage and newsPage send number of news by AJAX(now it hardcoded for 5)
 - [x] inject page domain using properties
-- [ ] fix autowiring for dao
+- [x] fix autowiring for dao
 - [x] UTF-8 for login input
 - [x] login/pass limits
 - [ ] realize comments for news
