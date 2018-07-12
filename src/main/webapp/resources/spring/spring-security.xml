@@ -23,7 +23,7 @@
                 password-parameter="password" />
         <logout
                 invalidate-session="true"
-                logout-success-url="/login"
+                logout-success-url="/login?logout"
                 logout-url="/logout"/>
 
         <!-- enable csrf protection -->

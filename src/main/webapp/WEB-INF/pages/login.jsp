@@ -50,7 +50,7 @@
                 <div class="breadcrumbs">
                     <div class="one-half alignleft">
                         <a href="<spring:eval expression="@propertyConfigurer.getProperty('catalog')" />">Home</a>
-                        <img src="<c:url value="/resources/images/arrow.png"/>" alt="" />
+                            <img src="<c:url value="/resources/images/arrow.png"/>" alt="" />
                         <a>Login</a>
                     </div>
                 </div><!--end breadcrumbs-->
@@ -65,7 +65,7 @@
                     <p class="lead">Login with Username and Password</p>
 
                     <c:if test="${not empty error}">
-                        <div class="error">${error}</div>
+                        <div class="errorLogin">${error}</div>
                     </c:if>
 
                     <c:if test="${not empty msg}">
