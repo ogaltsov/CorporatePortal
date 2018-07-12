@@ -17,7 +17,7 @@ import web.model.User;
 public class UserController {
 
     @Autowired
-    UserDao dao = new UserDao();
+    private UserDao dao;
 
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
